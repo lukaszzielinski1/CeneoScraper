@@ -4,4 +4,8 @@ charset-normalizer==2.0.12
 idna==3.3
 requests==2.27.1
 soupsieve==2.3.2
+<<<<<<< HEAD
 urllib3==1.26.9
+=======
+urllib3==1.26.9
+>>>>>>> 3914214d9bddf461a5b39f2a23b31b217e3b8c3c
