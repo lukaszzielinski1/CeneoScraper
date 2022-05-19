@@ -26,8 +26,8 @@ selectors = {
     "cons" : ['div.review-feature__title--negatives~ div.review-feature__item', None, True]
 }
 
-item_id = input("Insert Ceneo.pl item id: ")
-url = f'https://www.ceneo.pl/{item_id}#tab=reviews'
+product_id = input("Insert Ceneo.pl item id: ")
+url = f'https://www.ceneo.pl/{product_id}#tab=reviews'
 all_opinions = []
 while(url):
 
@@ -45,9 +45,9 @@ while(url):
         all_opinions.append(single_opinion)
 
     try:
-        url = f'https://www.ceneo.pl/{item_id}'+get_item(page, 'a.pagination__next', 'href')
+        url = f'https://www.ceneo.pl/{product_id}'+get_item(page, 'a.pagination__next', 'href')
     except TypeError:
         url = None
 
-with open(f"opinions/{item_id}.json", "w", encoding="UTF-8") as file:
+with open(f"opinions/{product_id}.json", "w", encoding="UTF-8") as file:
     json.dump(all_opinions, file, indent=4, ensure_ascii=False)
